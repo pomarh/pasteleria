@@ -66,7 +66,7 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="https:/www.instagram.com"
+                            href="https://www.instagram.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
@@ -74,7 +74,7 @@ export default function Footer() {
                         </a>
 
                         <a
-                            href="https:/www.tiktok.com"
+                            href="https://www.tiktok.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
