@@ -5,7 +5,7 @@ export default function ProductCard({ product }) {
         <div className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition duration-300 overflow-hidden group">
             {/* Image Container */}
             <div className="relative">
-                <img src={product.image} alt={product.name} className="w-full h-[250px] object-cover group-hover:scale-110 transition duration-500" />
+                <img src={product.image} alt={product.name} className="w-full h-62.5 object-cover group-hover:scale-110 transition duration-500" />
 
                 {/* Badge */}
                 {product.badge && (

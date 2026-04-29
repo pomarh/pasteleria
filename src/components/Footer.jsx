@@ -3,8 +3,14 @@ import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { Phone, MapPin, Mail } from "lucide-react";
 
 export default function Footer() {
+    const scrollTo = (id) => {
+        document.getElementById(id)?.scrollIntoView({
+            behavior: "smooth",
+        });
+    };
+
     return (
-        <footer className="bg-[#6D4C41] text-white">
+        <footer id="contacto" className="bg-[#6D4C41] text-white scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
                 {/* Brand */}
                 <div>
@@ -16,10 +22,18 @@ export default function Footer() {
                 <div>
                     <h3 className="font-semibold mb-3">Enlaces</h3>
                     <ul className="space-y-2 text-gray-200 text-sm">
-                        <li className="hover:text-pink-300 cursor-pointer">Inicio</li>
-                        <li className="hover:text-pink-300 cursor-pointer">Productos</li>
-                        <li className="hover:text-pink-300 cursor-pointer">Nosotros</li>
-                        <li className="hover:text-pink-300 cursor-pointer">Contacto</li>
+                        <li onClick={() => scrollTo("inicio")} className="hover:text-pink-300 cursor-pointer">
+                            Inicio
+                        </li>
+                        <li onClick={() => scrollTo("productos")} className="hover:text-pink-300 cursor-pointer">
+                            Productos
+                        </li>
+                        <li onClick={() => scrollTo("nosotros")} className="hover:text-pink-300 cursor-pointer">
+                            Nosotros
+                        </li>
+                        <li onClick={() => scrollTo("contacto")} className="hover:text-pink-300 cursor-pointer">
+                            Contacto
+                        </li>
                     </ul>
                 </div>
 
@@ -43,20 +57,28 @@ export default function Footer() {
                 <div>
                     <h3 className="font-semibold mb-3">Síguenos</h3>
                     <div className="flex gap-4">
-                        <a href="#" className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
+                        <a
+                            href="https://www.facebook.com/milekadaysi.huancacandia"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
                             <FaFacebook size={18} />
                         </a>
 
-                        <a href="#" className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
+                        <a
+                            href="https:/www.instagram.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
                             <FaInstagram size={18} />
                         </a>
 
-                        <a href="#" className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
+                        <a
+                            href="https:/www.tiktok.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
                             <FaTiktok size={18} />
-                        </a>
-
-                        <a href="#" className="bg-white/20 p-2 rounded-full hover:bg-pink-400 hover:scale-110 transition">
-                            <FaWhatsapp size={18} />
                         </a>
                     </div>
                 </div>

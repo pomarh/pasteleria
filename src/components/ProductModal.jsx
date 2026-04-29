@@ -12,7 +12,7 @@ export default function ProductModal({ product, onClose }) {
                 </button>
 
                 {/* Image */}
-                <img src={product.image} alt={product.name} className="w-full h-[250px] object-cover rounded-xl" />
+                <img src={product.image} alt={product.name} className="w-full h-62.5 object-cover rounded-xl" />
 
                 {/* Content */}
                 <h2 className="text-2xl font-bold text-[#6D4C41] mt-4">{product.name}</h2>
