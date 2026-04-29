@@ -9,7 +9,7 @@ const testimonials = [
         rating: 5,
     },
     {
-        name: "Carlos Rojas",
+        name: "Viviana Rojas",
         role: "Evento corporativo",
         image: "/clients/client2.jpg",
         comment: "Encargamos para un evento y todos quedaron encantados. Súper recomendados.",
