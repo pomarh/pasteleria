@@ -1,1 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 @import "tailwindcss";
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/karu-regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/karu-medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/karu-bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@theme {
+    --color-primary: #ff82ab;
+    --color-secodary: #f9e076;
+    --color-tertiary: #98ffd9;
+    --color-neutral: #fffbf5;
+    --color-lightGreen: #73d9b5;
+    --color-lightYellow: #fff1be;
+    --color-lightRose: #ffb1c6;
+    --color-bottonColor: #e06992;
+    --font-family-sans: "Montserrat", system-ui, sans-serif;
+}
