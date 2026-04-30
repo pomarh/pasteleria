@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { getCategories } from "../services/categories";
+
 const categories = [
     {
         name: "Tortas",
@@ -18,6 +21,14 @@ const categories = [
 ];
 
 export default function Categories({ setCategory, category }) {
+    //estados para llamar a la bd en la tabla de categories
+    const [categories, setCategories] = useState([]);
+
+    // useEffetc para getCategories
+    useEffect(() => {
+        getCategories().then(setCategories);
+    }, []);
+
     return (
         <section id="productos" className="py-16 bg-white  scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 md:px-8 ">
@@ -29,8 +40,8 @@ export default function Categories({ setCategory, category }) {
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {categories.map((cat, index) => (
-                        <div key={index} className="relative rounded-2xl overflow-hidden group cursor-pointer" onClick={() => setCategory(cat.name)}>
+                    {categories.map((cat) => (
+                        <div key={cat.id} className="relative rounded-2xl overflow-hidden group cursor-pointer" onClick={() => setCategory(cat.name)}>
                             {/* Image */}
                             <img
                                 src={cat.image}
