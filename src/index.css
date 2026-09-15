@@ -24,7 +24,7 @@
 }
 
 .animate-slide-up {
-    animation: slide-up 10s ease-out;
+    animation: slide-up 2s ease-out;
 }
 
 html {
