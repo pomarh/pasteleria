@@ -9,35 +9,18 @@ import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhastApp.Button";
 
 export default function Home() {
-    const [category, setCategory] = useState(null);
-
-    const products = [
-        {
-            name: "Torta de Fresa",
-            category: "Tortas",
-            price: 120,
-            image: "/img/pastel1.jpg",
-            description: "Deliciosa torta",
-        },
-        {
-            name: "Cupcake Vainilla",
-            category: "Cupcakes",
-            price: 50,
-            image: "/img/mofin3.jpg",
-            description: "Muy suave",
-        },
-    ];
+    const [categoryId, setCategoryId] = useState(null);
 
     return (
         <>
             <Navbar />
             <Hero />
 
-            {/* dispara cambio */}
-            <Categories setCategory={setCategory} />
+            {/* Seleccion de categoria */}
+            <Categories setCategory={setCategoryId} />
 
-            {/* render dinámico */}
-            <CategoryProducts category={category} products={products} />
+            {/* solo se muestra si hay productos */}
+            {categoryId && <CategoryProducts categoryId={categoryId} />}
 
             <Testimonials />
             <Footer />

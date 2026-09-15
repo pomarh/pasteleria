@@ -1,4 +1,16 @@
+import { useEffect } from "react";
+
 export default function ProductModal({ product, onClose }) {
+    useEffect(() => {
+        const handleEsc = (e) => e.key === "Escape" && onClose();
+        window.addEventListener("keydown", handleEsc);
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            window.removeEventListener("keydown", handleEsc);
+            document.body.style.overflow = "auto";
+        };
+    }, [onClose]);
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             {/* Overlay click */}

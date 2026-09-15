@@ -1,30 +1,15 @@
 import { Star } from "lucide-react";
-
-const testimonials = [
-    {
-        name: "María López",
-        role: "Cliente frecuente",
-        image: "/clients/client1.jpg",
-        comment: "Los mejores pasteles que he probado. La calidad y presentación son increíbles.",
-        rating: 5,
-    },
-    {
-        name: "Viviana Rojas",
-        role: "Evento corporativo",
-        image: "/clients/client2.jpg",
-        comment: "Encargamos para un evento y todos quedaron encantados. Súper recomendados.",
-        rating: 5,
-    },
-    {
-        name: "Ana Pérez",
-        role: "Cumpleaños",
-        image: "/clients/client3.jpg",
-        comment: "El pastel personalizado quedó perfecto. Exactamente como lo imaginé.",
-        rating: 4,
-    },
-];
+import { useState, useEffect } from "react";
+import { getTestimonials } from "../services/testimonials";
 
 export default function Testimonials() {
+    const [testimonials, setTestimonials] = useState([]);
+
+    useEffect(() => {
+        getTestimonials()
+            .then(setTestimonials)
+            .catch((error) => console.error("Error al cargar testimonios:", error));
+    }, []);
     return (
         <section className="py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -36,9 +21,9 @@ export default function Testimonials() {
 
                 {/* Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {testimonials.map((item, index) => (
+                    {testimonials.map((item) => (
                         <div
-                            key={index}
+                            key={item.id}
                             className="bg-[#FFF8E1] rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-2 transition duration-300">
                             {/* Stars */}
                             <div className="flex mb-3">
@@ -48,14 +33,19 @@ export default function Testimonials() {
                             </div>
 
                             {/* Comment */}
-                            <p className="text-gray-700 italic">“{item.comment}”</p>
+                            <p className="text-gray-700 italic">“{item.message}”</p>
 
                             {/* User */}
                             <div className="flex items-center gap-3 mt-6">
-                                <img src={item.image} alt={item.name} className="w-12 h-12 rounded-full object-cover" />
+                                {item.image ? (
+                                    <img src={item.image} alt={item.name} className="w-12 h-12 rounded-full object-cover" />
+                                ) : (
+                                    <div className="w-12 h-12 rounded-full bg-pink-200 flex items-center justify-center text-[#6D4C41] font-semibold">
+                                        {item.name?.charAt(0)}
+                                    </div>
+                                )}
                                 <div>
                                     <h4 className="font-semibold text-[#6D4C41]">{item.name}</h4>
-                                    <span className="text-sm text-gray-500">{item.role}</span>
                                 </div>
                             </div>
                         </div>

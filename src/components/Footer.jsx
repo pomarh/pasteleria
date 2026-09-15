@@ -45,7 +45,7 @@ export default function Footer() {
                             <MapPin size={16} /> La Paz, Bolivia
                         </li>
                         <li className="flex items-center gap-2">
-                            <Phone size={16} /> +591 777771361
+                            <Phone size={16} /> +591 77771361
                         </li>
                         <li className="flex items-center gap-2">
                             <Mail size={16} /> contacto@dulcemiley.com
