@@ -49,7 +49,7 @@ export default function Footer() {
                             <Phone size={16} /> +591 77771361
                         </li>
                         <li className="flex items-center gap-2">
-                            <Mail size={16} /> contacto@dulcemiley.com
+                            <Mail size={16} /> pasteleria.dulcemiley@gmail.com
                         </li>
                     </ul>
                 </div>
