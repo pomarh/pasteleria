@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FaFacebook, FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
 import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 import { Phone, MapPin, Mail } from "lucide-react";
@@ -86,7 +87,10 @@ export default function Footer() {
 
             {/* Bottom */}
             <div className="border-t border-white/20 text-center py-4 text-sm text-gray-300">
-                © {new Date().getFullYear()} Dulce Miley. Todos los derechos reservados.
+                © {new Date().getFullYear()} Dulce Miley. Todos los derechos reservados.{" "}
+                <Link to="/login" className="text-gray-400 hover:text-gray-200 transition">
+                    . Admin
+                </Link>
             </div>
         </footer>
     );
