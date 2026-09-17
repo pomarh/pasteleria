@@ -11,7 +11,7 @@ export default function Footer() {
     };
 
     return (
-        <footer id="contacto" className="bg-[#6D4C41] text-white scroll-mt-24">
+        <footer className="bg-[#6D4C41] text-white scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 md:px-8 py-12 grid grid-cols-1 md:grid-cols-4 gap-10">
                 {/* Brand */}
                 <div>

@@ -36,7 +36,11 @@ export default function Navbar() {
                 </ul>
 
                 {/* CTA Desktop */}
-                <button className="hidden md:block bg-pink-400 hover:bg-pink-500 text-white px-5 py-2 rounded-full transition">Ordenar</button>
+                <button
+                    onClick={() => scrollTo("contacto")}
+                    className="hidden md:block bg-primary hover:opacity-90 text-white px-5 py-2 rounded-full transition">
+                    Ordenar
+                </button>
 
                 {/* Mobile Button */}
                 <button className="md:hidden" onClick={() => setOpen(!open)}>

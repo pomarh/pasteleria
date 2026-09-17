@@ -7,6 +7,8 @@ import CategoryProducts from "../components/CategoryProducts";
 import Testimonials from "../components/Testimonials";
 import Footer from "../components/Footer";
 import WhatsAppButton from "../components/WhastApp.Button";
+import Nosotros from "../components/Nosotros";
+import Contacto from "../components/Contacto";
 
 export default function Home() {
     const [categoryId, setCategoryId] = useState(null);
@@ -16,6 +18,9 @@ export default function Home() {
             <Navbar />
             <Hero />
 
+            {/* Seleccion de nosotros */}
+            <Nosotros />
+
             {/* Seleccion de categoria */}
             <Categories setCategory={setCategoryId} />
 
@@ -23,6 +28,9 @@ export default function Home() {
             {categoryId && <CategoryProducts categoryId={categoryId} />}
 
             <Testimonials />
+
+            <Contacto />
+
             <Footer />
 
             {/* este componente siempre va al final */}
