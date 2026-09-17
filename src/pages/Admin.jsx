@@ -82,15 +82,17 @@ export default function Admin() {
     return (
         <div className="min-h-screen bg-neutral py-12 px-4 md:px-8">
             <div className="max-w-5xl mx-auto">
-                <h1 className="text-3xl font-bold text-[#6D4C41] mb-8">Administrar productos</h1>
-                <button
-                    onClick={() => {
-                        signOut();
-                        navigate("/login");
-                    }}
-                    className="text-sm text-gray-500 hover:underline">
-                    Cerrar sesión
-                </button>
+                <div className="flex justify-between items-center mb-8">
+                    <h1 className="text-3xl font-bold text-[#6D4C41]">Administrar productos</h1>
+                    <button
+                        onClick={() => {
+                            signOut();
+                            navigate("/login");
+                        }}
+                        className="text-sm text-gray-500 hover:underline">
+                        Cerrar sesión
+                    </button>
+                </div>
 
                 {/* Formulario */}
                 <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-sm p-6 mb-10 grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -153,8 +155,10 @@ export default function Admin() {
                 </form>
 
                 {/* Lista de productos */}
+
                 <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-                    <table className="w-full text-left">
+                    {/* Vista tabla — solo desktop */}
+                    <table className="w-full text-left hidden md:table">
                         <thead className="bg-[#FFF8E1] text-[#6D4C41]">
                             <tr>
                                 <th className="p-4">Imagen</th>
@@ -185,6 +189,28 @@ export default function Admin() {
                             ))}
                         </tbody>
                     </table>
+
+                    {/* Vista tarjetas — solo celular */}
+                    <div className="md:hidden divide-y">
+                        {products.map((product) => (
+                            <div key={product.id} className="p-4 flex gap-4">
+                                <img src={product.image} alt={product.name} className="w-16 h-16 object-cover rounded-lg shrink-0" />
+                                <div className="flex-1 min-w-0">
+                                    <h3 className="font-semibold text-[#6D4C41] truncate">{product.name}</h3>
+                                    <p className="text-sm text-gray-500">{product.categories?.name}</p>
+                                    <p className="text-primary font-bold mt-1">Bs. {product.price}</p>
+                                    <div className="flex gap-4 mt-2">
+                                        <button onClick={() => handleEdit(product)} className="text-primary text-sm hover:underline">
+                                            Editar
+                                        </button>
+                                        <button onClick={() => handleDelete(product.id)} className="text-red-500 text-sm hover:underline">
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
